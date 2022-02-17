@@ -23,7 +23,7 @@
           <v-col cols="12" sm="6">
             <p>
               <strong>Original File Size :</strong>
-              {{ file.size }}
+              {{ (file.size / 1000000).toFixed(2) }} Mb
             </p>
             <v-btn type="button" color="primary" elevation="0" @click="handleCompress">
               Compresser
@@ -38,8 +38,8 @@
           </v-col>
           <v-col cols="12" sm="6">
             <p>
-              <strong>Original File Size :</strong>
-              {{ compressedFile.size }}
+              <strong>Compressed File Size :</strong>
+              {{ (compressedFile.size / 1000000).toFixed(2) }} Mb
             </p>
           </v-col>
         </v-row>
