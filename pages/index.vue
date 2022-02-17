@@ -44,6 +44,12 @@
           </v-col>
         </v-row>
       </v-col>
+      <v-col cols="12">
+        <div id="image-compare">
+          <img :src="fileBase64" width="100%">
+          <img :src="compressedFileBase64" width="100%">
+        </div>
+      </v-col>
     </v-row>
   </div>
 </template>
@@ -87,6 +93,12 @@ export default {
 
       this.compressedFile = compressedData[0].photo.data
       this.compressedFileBase64 = await this.toBase64(this.compressedFile)
+
+      this.$nextTick(() => {
+        const element = document.getElementById('image-compare')
+        // eslint-disable-next-line no-undef
+        new ImageCompare(element).mount()
+      })
     },
     toBase64 (file) {
       return new Promise((resolve, reject) => {

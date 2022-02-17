@@ -15,7 +15,11 @@ export default {
       { name: 'format-detection', content: 'telephone=no' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'stylesheet', href: 'https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.css' }
+    ],
+    script: [
+      { src: 'https://unpkg.com/image-compare-viewer@1.5.0/dist/image-compare-viewer.min.js' }
     ]
   },
 
